@@ -2,7 +2,7 @@
 using System;
 using TechTalk.SpecFlow;
 
-namespace SpecFlow
+namespace SpecFlow.Features
 {
     [Binding]
     public class CalculatorSteps

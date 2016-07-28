@@ -19,7 +19,7 @@ Scenario: SpecFlow+ Excel Evaluation Mode
 
 Scenario Outline: Sheet1
 	Given I have entered <a> into the calculator
-	And I have entered <b> into the calculator
+	And I have also entered <b> into the calculator
 	When I press add
 	Then the result should be <result> on the screen
 

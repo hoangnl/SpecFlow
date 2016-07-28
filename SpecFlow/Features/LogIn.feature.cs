@@ -17,8 +17,8 @@ namespace SpecFlow.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LogInFeature")]
+    [TechTalk.SpecRun.FeatureAttribute("LogInFeature", Description="\tIn order to access my account\r\n    As a user of the website\r\n    I want to log i" +
+        "nto the website", SourceFile="Features\\LogIn.feature", SourceLine=0)]
     public partial class LogInFeatureFeature
     {
         
@@ -27,7 +27,7 @@ namespace SpecFlow.Features
 #line 1 "LogIn.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -36,19 +36,18 @@ namespace SpecFlow.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -64,9 +63,8 @@ namespace SpecFlow.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful Login with Valid Credentials")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [TechTalk.SpecRun.ScenarioAttribute("Successful Login with Valid Credentials", new string[] {
+                "mytag"}, SourceLine=6)]
         public virtual void SuccessfulLoginWithValidCredentials()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login with Valid Credentials", new string[] {
@@ -87,8 +85,7 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful LogOut")]
+        [TechTalk.SpecRun.ScenarioAttribute("Successful LogOut", SourceLine=13)]
         public virtual void SuccessfulLogOut()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful LogOut", ((string[])(null)));
@@ -100,6 +97,12 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("Successful LogOut message should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

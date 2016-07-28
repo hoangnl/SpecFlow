@@ -17,8 +17,7 @@ namespace SpecFlow.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Calculator")]
+    [TechTalk.SpecRun.FeatureAttribute("Calculator", SourceFile="Features\\Calculator.feature.xlsx", SourceLine=13)]
     public partial class CalculatorFeature
     {
         
@@ -27,7 +26,7 @@ namespace SpecFlow.Features
 #line 1 "Calculator.feature.xlsx"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace SpecFlow.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,8 +61,7 @@ namespace SpecFlow.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("SpecFlow+ Excel Evaluation Mode")]
+        [TechTalk.SpecRun.ScenarioAttribute("SpecFlow+ Excel Evaluation Mode", SourceLine=15)]
         public virtual void SpecFlowExcelEvaluationMode()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SpecFlow+ Excel Evaluation Mode", ((string[])(null)));
@@ -76,11 +73,6 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sheet1")]
-        [NUnit.Framework.TestCaseAttribute("Addition", "30", "70", "100", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Substract", "25", "-10", "15", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Adding negative numbers", "-5", "-1", "-6", new string[0])]
         public virtual void Sheet1(string @case, string a, string b, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sheet1", exampleTags);
@@ -89,13 +81,40 @@ this.ScenarioSetup(scenarioInfo);
 #line 21
  testRunner.Given(string.Format("I have entered {0} into the calculator", a), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.And(string.Format("I have entered {0} into the calculator", b), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have also entered {0} into the calculator", b), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
  testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then(string.Format("the result should be {0} on the screen", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Sheet1, Addition", SourceLine=27)]
+        public virtual void Sheet1_Addition()
+        {
+            this.Sheet1("Addition", "30", "70", "100", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Sheet1, Substract", SourceLine=27)]
+        public virtual void Sheet1_Substract()
+        {
+            this.Sheet1("Substract", "25", "-10", "15", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Sheet1, Adding negative numbers", SourceLine=27)]
+        public virtual void Sheet1_AddingNegativeNumbers()
+        {
+            this.Sheet1("Adding negative numbers", "-5", "-1", "-6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
